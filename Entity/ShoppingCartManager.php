@@ -105,17 +105,13 @@ class ShoppingCartManager implements ShoppingCartManagerInterface
      */
     public function removeAllItemsFromCart(ShoppingCartInterface $shoppingCart)
     {
-        if($shoppingCart == null){
+        if ($shoppingCart == null) {
             return null;
         }
-        $items = $shoppingCart->getItems();
-        
-        //clear the items in database
+        $items = $shoppingCart->getItems();        
         foreach ($items as $item) {
             $this->getEntityManager()->remove($item);
         }
-        
-        //clear the items in the array itself
         $items->clear();
     }
     
@@ -124,12 +120,10 @@ class ShoppingCartManager implements ShoppingCartManagerInterface
      */
     public function removeItemFromCart(ShoppingCartInterface $shoppingCart, $itemId)
     {
-        if($shoppingCart == null){
+        if ($shoppingCart == null) {
             return null;
         }
         $items = $shoppingCart->getItems();
-        
-        //clear the items in database
         foreach ($items as $item) {
             if($item->getId() == $itemId){
                 $this->getEntityManager()->remove($item);
@@ -138,6 +132,7 @@ class ShoppingCartManager implements ShoppingCartManagerInterface
             }
             
         }
+        
         return false;
     }
     
@@ -159,6 +154,7 @@ class ShoppingCartManager implements ShoppingCartManagerInterface
                 $items->removeElement($item);
             }
         }
+        
         return $shoppingCart;
     }
     
@@ -179,15 +175,14 @@ class ShoppingCartManager implements ShoppingCartManagerInterface
                $foundItem = $item;
                break;
             }
-        }
-        
-        if($foundItem == null){
+        }        
+        if ($foundItem == null) {
             $foundItem = $this->createCartItem();
             $foundItem->setProduct($product);
             $shoppingCart->addItem($foundItem);
-        }
-        
+        }        
         $foundItem->setQuantity($foundItem->getQuantity() + 1);
+        
         return $shoppingCart;
     }
     
@@ -195,7 +190,8 @@ class ShoppingCartManager implements ShoppingCartManagerInterface
      *
      * @return ShoppingCartFactoryInterface
      */
-    protected function getCartFactory() {
+    protected function getCartFactory()
+    {
         return $this->cartFactory;
     }    
     
@@ -203,7 +199,8 @@ class ShoppingCartManager implements ShoppingCartManagerInterface
      *
      * @return EntityManager
      */
-    protected function getEntityManager() {
+    protected function getEntityManager()
+    {
         return $this->entityManager;
     }
     
@@ -211,7 +208,8 @@ class ShoppingCartManager implements ShoppingCartManagerInterface
      *
      * @return EntityRepository
      */
-    protected function getCartRepository() {
+    protected function getCartRepository()
+    {
         return $this->cartRepository;
     }
 }
