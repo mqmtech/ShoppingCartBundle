@@ -67,4 +67,4 @@ interface ShoppingCartInterface {
     public function setUser($user);
 }
 
-?>
+

@@ -28,4 +28,4 @@ interface ShoppingCartFactoryInterface {
     public function getCartItemClass();
 }
 
-?>
+

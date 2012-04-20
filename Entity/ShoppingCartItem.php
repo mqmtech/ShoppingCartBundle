@@ -176,4 +176,4 @@ class ShoppingCartItem implements ShoppingCartItemInterface
     }
 }
 
-?>
+

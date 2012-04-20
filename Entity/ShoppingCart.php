@@ -301,4 +301,4 @@ class ShoppingCart implements ShoppingCartInterface
     }
 }
 
-?>
+

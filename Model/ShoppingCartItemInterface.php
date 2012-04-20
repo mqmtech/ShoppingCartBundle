@@ -37,4 +37,4 @@ interface ShoppingCartItemInterface {
     public function setShoppingCart($shoppingCart);
 }
 
-?>
+
