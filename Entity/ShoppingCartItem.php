@@ -3,7 +3,7 @@
 namespace MQM\ShoppingCartBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+
 use MQM\ShoppingCartBundle\Model\ShoppingCartInterface;
 use MQM\ShoppingCartBundle\Model\ShoppingCartItemInterface;
 use \DateTime;

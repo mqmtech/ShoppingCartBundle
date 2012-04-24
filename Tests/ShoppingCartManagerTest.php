@@ -2,9 +2,9 @@
 
 namespace MQM\ShoppingCartBundle\Test\ShoppingCart;
 
-use MQM\ShoppingCartBundle\ShoppingCart\ShoppingCartInterface;
-use MQM\ShoppingCartBundle\Model\ShoppingCartManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Tests\Functional\AppKernel;
+
+
+
 
 class ShoppingCartManagerTest extends \Symfony\Bundle\FrameworkBundle\Test\WebTestCase
 {   
