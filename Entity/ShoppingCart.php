@@ -289,6 +289,17 @@ class ShoppingCart implements ShoppingCartInterface
         $this->items[] = $item;
         $item->setShoppingCart($this); //Important to keep the right info in the database
     }
+
+    public function removeItem(ShoppingCartItemInterface $item)
+    {
+        if ($this->getItems() != null) {
+            if (isset($this->items[$item])) {
+                unset($this->items[$item]);
+            }
+        }
+
+        return $this;
+    }
     
     public function getUser()
     {
