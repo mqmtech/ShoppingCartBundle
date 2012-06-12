@@ -70,6 +70,16 @@ class ShoppingCartManager implements ShoppingCartManagerInterface
         $this->getEntityManager()->flush();
     }
     
+    public function isEmpty(ShoppingCartInterface $shoppingCart)
+    {
+        $items = $shoppingCart->getItems();
+        if ($items == null) {
+            return true;
+        }        
+        else 
+            return count($items) < 1;
+    }
+    
     /**
      * {@inheritDoc}
      */

@@ -56,6 +56,11 @@ interface ShoppingCartManagerInterface
     public function findCarts();
     
     /**
+     * @return boolean 
+     */
+    public function isEmpty(ShoppingCartInterface $shoppingCart);
+    
+    /**
      * Clear the items in the Shopping Cart
      * Important note: it's needed to perform an em->persist() / em->flush() to make this changes permanent
      *
